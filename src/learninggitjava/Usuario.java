@@ -5,6 +5,9 @@
  */
 package learninggitjava;
 
+import java.io.IOException;
+import java.util.ArrayList;
+
 /**
  *
  * @author kevjlope
@@ -36,7 +39,15 @@ public class Usuario {
     }
     
     public static void main(String[] args) {
-        // TODO code application logic here
+        try {
+            ArrayList<Provincia> provincias = Provincia.leerProvincia();
+            for (Provincia provincia : provincias) {
+                System.out.println(provincia.toString());
+            }
+
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
+        }
     }
     
 }
