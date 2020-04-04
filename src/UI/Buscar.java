@@ -78,11 +78,11 @@ public class Buscar {
         ArrayList<Ciudad> ciudades = provinEscogida.getCiudades();
         comboCiudad.getItems().clear();
         comboCiudad.getItems().addAll(ciudades);
-        /*for (Ciudad ciudade : ciudades) {
+        for (Ciudad ciudade : ciudades) {
             Label mostraP = new Label(ciudade.toString());
             mostrarInfo.getChildren().add(mostraP);
             //System.out.println(ciudade.toString());
-        }*/
+        }
         rootGP.setCenter(mostrarInfo);
     }
 }
