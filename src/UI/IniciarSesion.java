@@ -46,6 +46,7 @@ public class IniciarSesion {
         Label usuario = new Label("Usuario: ");
         Label password = new Label("Contrasena: ");
         iniciar = new Button("Iniciar Sesion");
+        iniciar.setOnAction(e -> iniciandoAPI());
         rootSecundario.setHgap(10);
         rootSecundario.setVgap(10);
         rootSecundario.add(usuario, 0, 0);
@@ -54,5 +55,12 @@ public class IniciarSesion {
         rootSecundario.add(inputPass, 1, 1);
         rootSecundario.setAlignment(Pos.CENTER);
         return rootSecundario;
+    }
+    
+    public void iniciandoAPI(){
+        rootPrincipal.getChildren().clear();
+        Buscar buscando = new Buscar();
+        rootPrincipal.getChildren().add(buscando.getRootPrincipal());
+        rootPrincipal.setAlignment(Pos.TOP_RIGHT);
     }
 }
