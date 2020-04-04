@@ -11,9 +11,30 @@ package learninggitjava;
  */
 public class Usuario {
 
-    /**
-     * @param args the command line arguments
-     */
+    //Atributos
+    private String userName, password;
+    
+    public Usuario(String userName, String password){
+        this.userName = userName;
+        this.password = password;
+    }
+    
+    public String getUserName(){
+        return userName;
+    }
+    
+    public String getPassword(){
+        return password;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    
     public static void main(String[] args) {
         // TODO code application logic here
     }
