@@ -53,8 +53,10 @@ public class Buscar {
         Label provincia = new Label("Provincia");
         comboProvincia = new ComboBox();
         cargandoProvincia();
+        Label ciudad = new Label("Ciudad");
+        comboCiudad = new ComboBox();
         anchor.getChildren().addAll(mensaje, menuTop);
-        menuTop.getChildren().addAll(provincia, comboProvincia);
+        menuTop.getChildren().addAll(provincia, comboProvincia,ciudad, comboCiudad);
         menuTop.setSpacing(10);
         AnchorPane.setTopAnchor(mensaje, 10.0);
         AnchorPane.setTopAnchor(menuTop, 30.0);
@@ -74,11 +76,13 @@ public class Buscar {
         VBox mostrarInfo = new VBox();
         Provincia provinEscogida = (Provincia) comboProvincia.getValue();
         ArrayList<Ciudad> ciudades = provinEscogida.getCiudades();
-        for (Ciudad ciudade : ciudades) {
+        comboCiudad.getItems().clear();
+        comboCiudad.getItems().addAll(ciudades);
+        /*for (Ciudad ciudade : ciudades) {
             Label mostraP = new Label(ciudade.toString());
             mostrarInfo.getChildren().add(mostraP);
             //System.out.println(ciudade.toString());
-        }
+        }*/
         rootGP.setCenter(mostrarInfo);
     }
 }
