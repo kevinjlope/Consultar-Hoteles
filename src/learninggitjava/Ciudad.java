@@ -26,7 +26,7 @@ import java.util.logging.Logger;
 public class Ciudad {
     private String idCiudad, idProvincia, ciudad;
     private static String fileNameCi = "src/recursos/ciudades.csv";
-    //private ArrayList<Hotel> hotelesCiudad;
+    private ArrayList<Hotel> hotelesCiudad;
     
     /**
      * Constructor Catalogo inicializa el objeto con los parámetros especificados
@@ -39,8 +39,8 @@ public class Ciudad {
         this.idCiudad = idCiudad;
         this.idProvincia = idProvincia;
         this.ciudad = ciudad;
-       // hotelesCiudad = new ArrayList<>();
-        //buscarCiudadHotel();
+        hotelesCiudad = new ArrayList<>();
+        buscarCiudadHotel();
     }
 
     @Override
@@ -113,16 +113,16 @@ public class Ciudad {
         this.ciudad = ciudad;
     }
 
-   // public ArrayList<Hotel> getHotelesCiudad() {
-     //   return hotelesCiudad;
-    //}
+    public ArrayList<Hotel> getHotelesCiudad() {
+       return hotelesCiudad;
+    }
     
     /**
      * Método que permite buscar a los Hoteles que se encuentran
      * o pertenecen al objeto de tipo Ciudad
      * @since 17/11/2019
      */
-    /*
+    
     public void buscarCiudadHotel(){
         try {
             ArrayList<Hotel> hotelesC = Hotel.leerHotel();
@@ -134,5 +134,5 @@ public class Ciudad {
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
-    }*/
+    }
 }
