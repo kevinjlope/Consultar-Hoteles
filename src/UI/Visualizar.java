@@ -26,7 +26,7 @@ public class Visualizar extends Application {
         IniciarSesion inicio = new IniciarSesion();
         VBox almacenar = inicio.getRootPrincipal();
         //almacenar.setAlignment(Pos.CENTER);
-        Scene scene = new Scene(almacenar, 500, 400);
+        Scene scene = new Scene(almacenar, 800, 700);
         primaryStage.setTitle("Nunca pares de aprender!");
         primaryStage.setScene(scene);
         primaryStage.show();

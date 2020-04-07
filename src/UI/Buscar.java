@@ -8,10 +8,18 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
 import learninggitjava.Ciudad;
 import learninggitjava.Hotel;
 import learninggitjava.Provincia;
@@ -60,6 +68,7 @@ public class Buscar {
     public HBox opcionesBusqueda(){
         HBox seccionButton = new HBox();
         seccionButton.setAlignment(Pos.CENTER);
+        seccionButton.setSpacing(15);
         buscar = new Button("Buscar");
         seccionButton.getChildren().add(buscar);
         buscar.setOnAction(e -> iniciarBUsqueda());
@@ -67,15 +76,16 @@ public class Buscar {
     }
     
     public void iniciarBUsqueda(){
-        VBox mostrarHoteles = new VBox();
+        FlowPane mostrarHoteles = new FlowPane();
+        mostrarHoteles.setAlignment(Pos.CENTER);
         mostrarHoteles.getChildren().clear();
         
         if(provinEscogida != null && ciudadEscogida !=null){
-            //hoteles.clear();
             hoteles = ciudadEscogida.getHotelesCiudad();
             for (Hotel hotele : hoteles) {
-                Label nameH = new Label(hotele.toString());
-                mostrarHoteles.getChildren().add(nameH);
+                HotelUI h = new HotelUI(hotele);
+                mostrarHoteles.getChildren().add(h.getRootBorderP());
+                
             }
         }else{
             Label mensaje = new Label("Verifique si ah seleccionado alguna provincia o ciudad");
