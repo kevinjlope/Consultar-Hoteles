@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.Border;
@@ -107,8 +108,10 @@ public class Buscar {
         Label ciudad = new Label("Ciudad");
         comboCiudad = new ComboBox();
         cargarCiudad();
+        TextField inputText = new TextField();
+        Label l = new Label("Nombre Hotel: ");
         anchor.getChildren().addAll(mensaje, menuTop);
-        menuTop.getChildren().addAll(provincia, comboProvincia,ciudad, comboCiudad);
+        menuTop.getChildren().addAll(provincia, comboProvincia,ciudad, comboCiudad,l,inputText);
         menuTop.setSpacing(10);
         AnchorPane.setTopAnchor(mensaje, 10.0);
         AnchorPane.setTopAnchor(menuTop, 30.0);
@@ -135,7 +138,6 @@ public class Buscar {
     
     public void mostrarCiudades() {
          provinEscogida = (Provincia) comboProvincia.getValue();
-         //System.out.println(provinEscogida.toString());
           ciudades = provinEscogida.getCiudades();
         comboCiudad.getItems().clear();
         comboCiudad.getItems().addAll(ciudades);
